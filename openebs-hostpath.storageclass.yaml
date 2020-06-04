@@ -1,0 +1,15 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    cas.openebs.io/config: "- name: StorageType\n  value: \"hostpath\"\n- name: BasePath\n
+      \ value: /var/openebs/local \n"
+    openebs.io/cas-type: local
+  creationTimestamp: "2020-04-09T15:16:43Z"
+  name: openebs-hostpath
+  resourceVersion: "138621830"
+  selfLink: /apis/storage.k8s.io/v1/storageclasses/openebs-hostpath
+  uid: d5ec6737-195c-4181-bd57-313bb5fc456b
+provisioner: openebs.io/local
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer

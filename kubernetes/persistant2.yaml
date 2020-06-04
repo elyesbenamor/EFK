@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: v3
+spec:
+  storageClassName: openebs-hostpath
+  capacity:
+    storage: 5Gi
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /var/openebs/local
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - infra-2-prod-3
+  claimRef:
+    name: fluentd
+         
+  #hostPath:
+   # path: "/home/storage/efk"

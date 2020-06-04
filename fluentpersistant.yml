@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efk-volume-fluent
+spec:
+  storageClassName: new-storage
+  capacity:
+    storage: 5Gi
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  local:
+    path: /fluent
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - eg-16-4
+  #hostPath:
+   # path: "/home/storage/efk"

@@ -1,0 +1,54 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "cattle.io/status": "{\"Conditions\":[{\"Type\":\"InitialRolesPopulated\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2020-04-09T09:48:20Z\"},{\"Type\":\"ResourceQuotaValidated\",\"Status\":\"Unknown\",\"Message\":\"Validating resource quota\",\"LastUpdateTime\":\"\"},{\"Type\":\"ResourceQuotaInit\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2020-04-09T09:48:14Z\"}]}",
+            "field.cattle.io/creatorId": "u-qmsqrd2gvr",
+            "field.cattle.io/projectId": "c-dvgvl:p-85tzs",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"name\":\"openebs\"}}\n",
+            "lifecycle.cattle.io/create.namespace-auth": "true"
+        },
+        "creationTimestamp": "2020-04-09T09:48:13Z",
+        "deletionTimestamp": "2020-04-09T13:06:40Z",
+        "labels": {
+            "cattle.io/creator": "norman",
+            "field.cattle.io/projectId": "p-85tzs"
+        },
+        "name": "openebs",
+        "resourceVersion": "138607264",
+        "selfLink": "/api/v1/namespaces/openebs",
+        "uid": "97fc9ca6-a974-4155-9282-0eb872a0c56a"
+    },
+    "spec": {
+        "finalizers": [
+            
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2020-04-09T13:07:00Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2020-04-09T13:07:00Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2020-04-09T13:07:22Z",
+                "message": "All content successfully deleted",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
